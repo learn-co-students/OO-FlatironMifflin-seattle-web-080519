@@ -12,7 +12,7 @@ class Manager
     end
 
     def employees
-        
+        Employee.all.select { |employee| employee.manager == self}
     end
 
     def hire_employee

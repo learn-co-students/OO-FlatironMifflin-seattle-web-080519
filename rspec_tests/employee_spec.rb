@@ -18,6 +18,7 @@ describe Employee do
     alexander = Employee.new("Alexander", 35000, sarah)
     bob = Employee.new("Bob", 70000, joe)
     alice = Employee.new("Alice", 92500, sarah)
+    employees = Employee.all
 
     describe "#name" do
         it "should return the name of the employee" do
@@ -49,6 +50,15 @@ describe Employee do
         end
         it "should be a string" do
             alice.manager.name.should be_a(String)
+        end
+    end
+
+    describe ".all" do
+        it "should return an list of employees" do
+            expect(employees).to include(arnie, chris, alexander, bob, alice)
+        end
+        it "should be an array" do
+            employees.should be_a(Array)
         end
     end
         
